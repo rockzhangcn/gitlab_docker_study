@@ -1,0 +1,8 @@
+# gitlab web add ssh-key (~/.ssh/id_rsa) 
+# in docker-compose file, we set gitlab.local as the hostname, so in the 
+# web repo remote url is set to gitlab.local
+Host gitlab.local
+    HostName gitlab.local
+    Port 2222
+    User git
+    IdentityFile ~/.ssh/id_rsa
