@@ -19,7 +19,9 @@ services:
     image: gitlab/gitlab-runner:latest
     container_name: gitlab-runner
     restart: always
-    network_mode: "host"
+    extra_hosts:
+      #- "gitlab.local:172.16.225.138"   # 或宿主机真实 IP
+      - "gitlab.local:127.0.0.1"
     volumes:
       - /srv/gitlab-runner/config:/etc/gitlab-runner
       - /var/run/docker.sock:/var/run/docker.sock
